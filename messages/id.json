@@ -1,10 +1,10 @@
 {
-	"Index": {
-		"title": "Selamat Datang",
-		"description": "Ini adalah versi Bahasa Indonesia"
-	},
-	"About": {
-		"title": "Tentang Kami",
-		"description": "Ini adalah halaman tentang kami dalam Bahasa Indonesia"
-	}
+    "Index": {
+        "title": "Selamat Datang",
+        "description": "Ini adalah versi Bahasa Indonesia"
+    },
+    "About": {
+        "title": "Tentang Kami",
+        "description": "Ini adalah halaman tentang kami dalam Bahasa Indonesia"
+    }
 }
