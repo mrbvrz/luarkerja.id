@@ -18,5 +18,42 @@
     "BlogDetail": {
         "title": "Artikel",
         "readMore": "Baca Selengkapnya"
+    },
+    "Contact": {
+        "title": "Hubungi Kami",
+        "description": "Kami siap membantu Anda membuat aplikasi dan website yang Anda butuhkan.",
+        "company": "Perusahaan",
+        "address": "Alamat",
+        "email": "Email",
+        "phone": "Telepon",
+        "form": {
+            "name": "Nama Lengkap",
+            "email": "Alamat Email",
+            "subject": "Subjek",
+            "message": "Pesan Anda",
+            "send": "Kirim"
+        },
+        "error": {
+            "name": "Nama wajib diisi",
+            "email": "Email wajib diisi",
+            "subject": "Subjek wajib diisi",
+            "message": "Pesan wajib diisi"
+        },
+        "success": "Pesan Anda telah berhasil dikirim!"
+    },
+    "Cookie": {
+        "message": "Situs ini menggunakan cookies untuk meningkatkan pengalaman pengguna. Dengan terus menggunakan situs ini, Anda menyetujui penggunaan cookies.",
+        "accept": "Saya Setuju"
+    },
+    "Services": {
+        "pageTitle": "Layanan Kami",
+        "consultingTitle": "Konsultasi IT",
+        "consultingDesc": "Membantu bisnis Anda dalam merancang strategi teknologi.",
+        "developmentTitle": "Pengembangan Web",
+        "developmentDesc": "Membangun situs web responsif dan modern.",
+        "mobileTitle": "Aplikasi Mobile",
+        "mobileDesc": "Membuat aplikasi Android dan iOS berkualitas tinggi.",
+        "webTitle": "Sistem Informasi",
+        "webDesc": "Solusi digital untuk otomasi dan efisiensi kerja."
     }
 }

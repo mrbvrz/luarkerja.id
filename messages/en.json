@@ -18,5 +18,42 @@
     "BlogDetail": {
         "title": "Article",
         "readMore": "Read more"
+    },
+    "Contact": {
+        "title": "Contact Us",
+        "description": "We are ready to help you build your desired apps and websites.",
+        "company": "Company",
+        "address": "Address",
+        "email": "Email",
+        "phone": "Phone",
+        "form": {
+            "name": "Full Name",
+            "email": "Email Address",
+            "subject": "Subject",
+            "message": "Your Message",
+            "send": "Send"
+        },
+        "error": {
+            "name": "Name is required",
+            "email": "Email is required",
+            "subject": "Subject is required",
+            "message": "Message is required"
+        },
+        "success": "Your message has been sent successfully!"
+    },
+    "Cookie": {
+        "message": "This website uses cookies to enhance user experience. By continuing to use this site, you consent to our use of cookies.",
+        "accept": "I Agree"
+    },
+    "Services": {
+        "pageTitle": "Our Services",
+        "consultingTitle": "IT Consulting",
+        "consultingDesc": "Helping your business design effective tech strategies.",
+        "developmentTitle": "Web Development",
+        "developmentDesc": "Building responsive and modern websites.",
+        "mobileTitle": "Mobile Applications",
+        "mobileDesc": "Creating high-quality Android & iOS apps.",
+        "webTitle": "Information Systems",
+        "webDesc": "Digital solutions for automation and efficiency."
     }
 }

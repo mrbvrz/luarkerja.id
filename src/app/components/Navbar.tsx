@@ -1,51 +1,56 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { usePathname, useParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
-const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' }
-];
+const navItems = {
+    en: [
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'About', href: '/about' },
+        { label: 'Services', href: '/services' },
+        { label: 'Contact', href: '/contact' }
+    ],
+    id: [
+        { label: 'Beranda', href: '/' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'Tentang', href: '/about' },
+        { label: 'Layanan', href: '/services' },
+        { label: 'Kontak', href: '/contact' }
+    ]
+};
 
 export default function Navbar() {
     const [show, setShow] = useState(true);
     const lastScrollY = useRef(0);
     const pathname = usePathname();
-    const params = useParams();
 
-    // Ambil locale dari route params
-    const locale = params?.locale ?? 'en';
+    const locale = pathname.startsWith('/en') ? 'en' : 'id';
+    const currentNavItems = navItems[locale as 'en' | 'id'];
 
     useEffect(() => {
-        function handleScroll() {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY < 0) return;
+        const handleScroll = () => {
+            const currentY = window.scrollY;
+            if (currentY < 0) return;
 
-            if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+            if (currentY > lastScrollY.current && currentY > 100) {
                 setShow(false);
             } else {
                 setShow(true);
             }
 
-            lastScrollY.current = currentScrollY;
-        }
+            lastScrollY.current = currentY;
+        };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Fungsi cek active menu dengan locale prefix
     const isActive = (href: string) => {
-        // Build full path with locale prefix
-        const fullPath = `/${locale}${href === '/' ? '' : href}`;
-
-        // Contoh: pathname = "/en/about"
-        return pathname === fullPath;
+        const full = `/${locale}${href === '/' ? '' : href}`;
+        return pathname === full;
     };
 
     return (
@@ -59,14 +64,16 @@ export default function Navbar() {
                     className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/70 dark:bg-gray-900/70 shadow-md"
                 >
                     <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-                        <div className="text-xl font-bold text-gray-900 dark:text-white">LOGO</div>
+                        <div className="text-xl font-bold text-gray-900 dark:text-white">
+                            LuarKerja
+                        </div>
                         <ul className="flex space-x-6 text-gray-700 dark:text-gray-300">
-                            {navItems.map(({ label, href }) => {
+                            {currentNavItems.map(({ label, href }) => {
                                 const active = isActive(href);
                                 return (
                                     <li key={href}>
                                         <Link
-                                            href={href}
+                                            href={`/${locale}${href === '/' ? '' : href}`}
                                             locale={locale}
                                             className={`transition px-2 py-1 rounded-md ${
                                                 active

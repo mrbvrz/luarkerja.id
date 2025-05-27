@@ -1,5 +1,5 @@
 module.exports = {
     locales: ['en', 'id'],
-    defaultLocale: 'en',
+    defaultLocale: 'id',
     localePrefix: 'as-needed' // atau 'always', tergantung preferensi
 };

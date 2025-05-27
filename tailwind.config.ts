@@ -1,7 +1,6 @@
 import type { Config } from 'tailwindcss';
 import typography from '@tailwindcss/typography';
 
-
 const config: Config = {
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,9 +12,12 @@ const config: Config = {
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+            },
+            colors: {
+                'cookie-bg': '#fefefe'
             }
         }
     },
-    plugins: [typography],
+    plugins: [typography]
 };
 export default config;

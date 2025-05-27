@@ -5,34 +5,34 @@ import { getTranslations } from 'next-intl/server';
 import MarkdownRenderer from '@/app/components/MarkdownRenderer';
 
 export default async function BlogDetailPage({
-  params,
+    params
 }: {
-  params: { locale: string; slug: string };
+    params: { locale: string; slug: string };
 }) {
-  const supabase = createServerComponentClient({ cookies });
-  const { locale, slug } = params;
+    const supabase = createServerComponentClient({ cookies });
+    const { locale, slug } = params;
 
-  const { data: blog } = await supabase
-    .from('blogs')
-    .select('title, content, description, created_at')
-    .eq('slug', slug)
-    .eq('lang', locale)
-    .eq('status', 'published')
-    .single();
+    const { data: blog } = await supabase
+        .from('blogs')
+        .select('title, content, description, created_at')
+        .eq('slug', slug)
+        .eq('lang', locale)
+        .eq('status', 'published')
+        .single();
 
-  if (!blog) return notFound();
+    if (!blog) return notFound();
 
-  const t = await getTranslations('Blog');
+    const t = await getTranslations('Blog');
 
-  return (
-    <article className="max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">{blog.title}</h1>
-      <p className="text-sm text-gray-500 mb-6">
-        {new Date(blog.created_at).toLocaleDateString(locale)}
-      </p>
+    return (
+        <article className="max-w-3xl mx-auto px-4 py-10">
+            <h1 className="text-3xl font-bold mb-2">{blog.title}</h1>
+            <p className="text-sm text-gray-500 mb-6">
+                {new Date(blog.created_at).toLocaleDateString(locale)}
+            </p>
 
-      {/* Render Markdown */}
-      <MarkdownRenderer markdown={blog.content} />
-    </article>
-  );
+            {/* Render Markdown */}
+            <MarkdownRenderer markdown={blog.content} />
+        </article>
+    );
 }

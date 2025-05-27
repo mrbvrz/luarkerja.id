@@ -2,7 +2,6 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import BlogCard from '@/app/components/BlogCard';
 import { getTranslations } from 'next-intl/server';
-import '@/app/globals.css';
 
 export default async function BlogPage({ params }: { params: { locale: string } }) {
     const supabase = createServerComponentClient({ cookies });

@@ -18,9 +18,19 @@ export default function LocaleDropdown() {
 
     // Ambil locale tersimpan dari localStorage saat pertama render
     useEffect(() => {
-        const saved = localStorage.getItem('locale');
-        if (saved === 'en' || saved === 'id') setSelected(saved);
-    }, []);
+        const saved = localStorage.getItem('locale') as 'en' | 'id' | null;
+        const currentLocale = pathname.split('/')[1] as 'en' | 'id';
+
+        if (saved && saved !== currentLocale) {
+            const newPath = `/${saved}${pathname.substring(3)}`;
+            router.replace(newPath);
+        } else if (!saved) {
+            localStorage.setItem('locale', currentLocale);
+            setSelected(currentLocale);
+        } else {
+            setSelected(currentLocale);
+        }
+    }, [pathname, router]);
 
     // Tutup dropdown kalau klik di luar elemen dropdown
     useEffect(() => {
@@ -34,17 +44,19 @@ export default function LocaleDropdown() {
     }, []);
 
     const handleChangeLocale = (newLocale: 'en' | 'id') => {
-        setSelected(newLocale);
-        localStorage.setItem('locale', newLocale);
-
-        const segments = pathname.split('/');
-        if (segments[1] === 'en' || segments[1] === 'id') {
-            segments[1] = newLocale;
-        } else {
-            segments.unshift(newLocale);
+        if (newLocale === selected) {
+            setOpen(false);
+            return;
         }
 
-        router.push(segments.join('/'));
+        localStorage.setItem('locale', newLocale);
+        setSelected(newLocale);
+
+        const segments = pathname.split('/');
+        segments[1] = newLocale;
+        const newPath = segments.join('/');
+
+        router.push(newPath);
         setOpen(false);
     };
 
@@ -76,7 +88,7 @@ export default function LocaleDropdown() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -10, scale: 0.95 }}
                             transition={{ duration: 0.25 }}
-                            className="absolute left-0 top-full mt-2 flex flex-col rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 z-50 py-2 w-36"
+                            className="absolute left-0 top-full mt-2 flex flex-col rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 z-50 py-2 w-44"
                         >
                             {locales.map(locale => (
                                 <button
