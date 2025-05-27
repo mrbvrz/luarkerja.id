@@ -11,5 +11,12 @@
         "title": "LuarKerja",
         "subtitle": "Professional app and website development for your business.",
         "cta": "Get Started"
+    },
+    "Blog": {
+        "title": "Latest Articles"
+    },
+    "BlogDetail": {
+        "title": "Article",
+        "readMore": "Read more"
     }
 }

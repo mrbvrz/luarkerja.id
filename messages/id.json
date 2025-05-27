@@ -11,5 +11,12 @@
         "title": "LuarKerja",
         "subtitle": "Layanan pembuatan aplikasi dan website profesional untuk bisnis Anda.",
         "cta": "Mulai Sekarang"
+    },
+    "Blog": {
+        "title": "Artikel Terbaru"
+    },
+    "BlogDetail": {
+        "title": "Artikel",
+        "readMore": "Baca Selengkapnya"
     }
 }
