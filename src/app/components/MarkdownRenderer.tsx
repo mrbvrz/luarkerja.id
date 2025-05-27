@@ -11,7 +11,11 @@ export default function MarkdownRenderer({ markdown }: Props) {
     const [html, setHtml] = useState('');
 
     useEffect(() => {
-        setHtml(marked.parse(markdown));
+        async function parseMarkdown() {
+            const parsed = await marked.parse(markdown);
+            setHtml(parsed);
+        }
+        parseMarkdown();
     }, [markdown]);
 
     return (
