@@ -50,7 +50,14 @@ export default function Navbar() {
 
     const isActive = (href: string) => {
         const full = `/${locale}${href === '/' ? '' : href}`;
-        return pathname === full;
+
+        // Khusus untuk root '/'
+        if (href === '/') {
+            return pathname === `/${locale}`;
+        }
+
+        // Untuk path lain, aktif jika sama atau berada dalam path detail
+        return pathname === full || pathname.startsWith(`${full}/`);
     };
 
     return (
