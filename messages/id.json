@@ -6,5 +6,10 @@
     "About": {
         "title": "Tentang Kami",
         "description": "Ini adalah halaman tentang kami dalam Bahasa Indonesia"
+    },
+    "Hero": {
+        "title": "LuarKerja",
+        "subtitle": "Layanan pembuatan aplikasi dan website profesional untuk bisnis Anda.",
+        "cta": "Mulai Sekarang"
     }
 }

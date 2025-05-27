@@ -6,5 +6,10 @@
     "About": {
         "title": "About Us",
         "description": "This is the about us page in English"
+    },
+    "Hero": {
+        "title": "LuarKerja",
+        "subtitle": "Professional app and website development for your business.",
+        "cta": "Get Started"
     }
 }
