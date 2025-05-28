@@ -29,12 +29,8 @@ export default function AboutPage() {
         <main className="max-w-5xl mx-auto px-4 py-10">
             <section className="mb-12">
                 <h1 className="text-3xl font-bold mb-4">{t('title')}</h1>
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                    {t('intro1')}
-                </p>
-                <p className="text-lg text-gray-700 dark:text-gray-300">
-                    {t('intro2')}
-                </p>
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">{t('intro1')}</p>
+                <p className="text-lg text-gray-700 dark:text-gray-300">{t('intro2')}</p>
             </section>
 
             <section>
@@ -55,8 +51,12 @@ export default function AboutPage() {
                                 />
                             </div>
                             <h3 className="text-lg font-semibold">{member.name}</h3>
-                            <p className="text-sm text-blue-600 dark:text-blue-400">{t(`roles.${member.roleId}`)}</p>
-                            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">{t(`descriptions.${member.descriptionId}`)}</p>
+                            <p className="text-sm text-blue-600 dark:text-blue-400">
+                                {t(`roles.${member.roleId}`)}
+                            </p>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                                {t(`descriptions.${member.descriptionId}`)}
+                            </p>
                         </div>
                     ))}
                 </div>

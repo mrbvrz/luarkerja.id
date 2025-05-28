@@ -55,10 +55,18 @@ export default function ContactPage() {
                         Silakan isi formulir di samping untuk menghubungi kami.
                     </p>
                     <ul className="space-y-2 text-gray-800 dark:text-gray-200">
-                        <li><strong>Perusahaan:</strong> LuarKerja</li>
-                        <li><strong>Alamat:</strong> Jl. Teknologi No. 123, Jakarta</li>
-                        <li><strong>Email:</strong> info@luarkerja.com</li>
-                        <li><strong>Telepon:</strong> +62 812-3456-7890</li>
+                        <li>
+                            <strong>Perusahaan:</strong> LuarKerja
+                        </li>
+                        <li>
+                            <strong>Alamat:</strong> Jl. Teknologi No. 123, Jakarta
+                        </li>
+                        <li>
+                            <strong>Email:</strong> info@luarkerja.com
+                        </li>
+                        <li>
+                            <strong>Telepon:</strong> +62 812-3456-7890
+                        </li>
                     </ul>
                 </div>
 
@@ -71,12 +79,14 @@ export default function ContactPage() {
                     />
                     {errors.name && <span className="text-red-500 text-sm">Nama wajib diisi</span>}
 
-<input
-    {...register('phone', { required: true })}
-    placeholder="Nomor HP"
-    className="w-full px-4 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
-/>
-{errors.phone && <span className="text-red-500 text-sm">Nomor HP wajib diisi</span>}
+                    <input
+                        {...register('phone', { required: true })}
+                        placeholder="Nomor HP"
+                        className="w-full px-4 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                    />
+                    {errors.phone && (
+                        <span className="text-red-500 text-sm">Nomor HP wajib diisi</span>
+                    )}
 
                     <input
                         type="email"
@@ -84,14 +94,18 @@ export default function ContactPage() {
                         placeholder="Email"
                         className="w-full px-4 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                     />
-                    {errors.email && <span className="text-red-500 text-sm">Email wajib diisi</span>}
+                    {errors.email && (
+                        <span className="text-red-500 text-sm">Email wajib diisi</span>
+                    )}
 
                     <input
                         {...register('subject', { required: true })}
                         placeholder="Subjek"
                         className="w-full px-4 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                     />
-                    {errors.subject && <span className="text-red-500 text-sm">Subjek wajib diisi</span>}
+                    {errors.subject && (
+                        <span className="text-red-500 text-sm">Subjek wajib diisi</span>
+                    )}
 
                     <textarea
                         rows={5}
@@ -99,7 +113,9 @@ export default function ContactPage() {
                         placeholder="Pesan"
                         className="w-full px-4 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                     />
-                    {errors.message && <span className="text-red-500 text-sm">Pesan wajib diisi</span>}
+                    {errors.message && (
+                        <span className="text-red-500 text-sm">Pesan wajib diisi</span>
+                    )}
 
                     <button
                         type="submit"

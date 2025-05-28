@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import dynamic from 'next/dynamic';
 
 const BlogList = dynamic(() => import('@/app/components/BlogList'), {
-    ssr: false, // Load di client
+    ssr: false // Load di client
 });
 
 export default async function BlogPage({ params }: { params: { locale: string } }) {

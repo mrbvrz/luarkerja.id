@@ -47,9 +47,7 @@ export default async function LocaleLayout({
             <body>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Navbar />
-                    <PageTransition>
-                    {children}
-                    </PageTransition>
+                    <PageTransition>{children}</PageTransition>
                     <CookieConsent />
                     <Footer />
                 </NextIntlClientProvider>

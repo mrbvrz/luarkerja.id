@@ -7,9 +7,13 @@ import SkeletonBlogCard from './SkeletonBlogCard';
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 export default function BlogList({ locale }: { locale: string }) {
-    const { data: blogs, error, isLoading } = useSWR(`/api/blogs?locale=${locale}`, fetcher, {
+    const {
+        data: blogs,
+        error,
+        isLoading
+    } = useSWR(`/api/blogs?locale=${locale}`, fetcher, {
         revalidateOnFocus: false,
-        revalidateOnReconnect: false,
+        revalidateOnReconnect: false
     });
 
     if (isLoading) {

@@ -9,11 +9,11 @@
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  @apply font-sans;
+    @apply font-sans;
 }
 
 .animate {
