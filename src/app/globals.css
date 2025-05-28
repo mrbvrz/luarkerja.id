@@ -8,6 +8,14 @@
     }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans;
+}
+
 .animate {
     animation-duration: 0.5s;
     animation-name: animate-fade;

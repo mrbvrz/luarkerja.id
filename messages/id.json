@@ -4,8 +4,20 @@
         "description": "Ini adalah versi Bahasa Indonesia"
     },
     "About": {
-        "title": "Tentang Kami",
-        "description": "Ini adalah halaman tentang kami dalam Bahasa Indonesia"
+        "title": "Tentang LuarKerja",
+        "intro1": "LuarKerja adalah penyedia jasa pembuatan aplikasi dan website berbasis kebutuhan pengguna.",
+        "intro2": "Didirikan pada tahun 2020, LuarKerja telah membantu berbagai instansi pemerintah dan perusahaan swasta membangun solusi digital.",
+        "teamTitle": "Anggota Tim",
+        "roles": {
+            "founder": "Pendiri & Developer",
+            "designer": "Desainer UI/UX",
+            "pm": "Manajer Proyek"
+        },
+        "descriptions": {
+            "hasanDesc": "Hasan adalah pengembang berpengalaman dengan latar belakang sistem informasi pemerintahan.",
+            "dinaDesc": "Dina bertanggung jawab atas desain antarmuka pengguna dan pengalaman pengguna.",
+            "rikoDesc": "Riko memastikan setiap proyek berjalan sesuai jadwal dan kebutuhan klien."
+        }
     },
     "Hero": {
         "title": "LuarKerja",

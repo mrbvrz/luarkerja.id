@@ -4,8 +4,20 @@
         "description": "This is the English version"
     },
     "About": {
-        "title": "About Us",
-        "description": "This is the about us page in English"
+        "title": "About LuarKerja",
+        "intro1": "LuarKerja is a service provider for custom application and website development based on user needs.",
+        "intro2": "Founded in 2020, LuarKerja has helped many government agencies and private companies build digital solutions.",
+        "teamTitle": "Team Members",
+        "roles": {
+            "founder": "Founder & Developer",
+            "designer": "UI/UX Designer",
+            "pm": "Project Manager"
+        },
+        "descriptions": {
+            "hasanDesc": "Hasan is an experienced developer with a background in government information systems.",
+            "dinaDesc": "Dina is responsible for user interface and user experience design.",
+            "rikoDesc": "Riko ensures every project runs on time and meets client requirements."
+        }
     },
     "Hero": {
         "title": "LuarKerja",

@@ -20,7 +20,7 @@ export default function MarkdownRenderer({ markdown }: Props) {
 
     return (
         <div
-            className="prose prose-slate dark:prose-invert lg:prose-xl max-w-none"
+            className="prose prose-slate dark:prose-invert max-w-none"
             dangerouslySetInnerHTML={{ __html: html }}
         />
     );

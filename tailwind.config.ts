@@ -15,6 +15,9 @@ const config: Config = {
             },
             colors: {
                 'cookie-bg': '#fefefe'
+            },
+            fontFamily: {
+                sans: ['var(--font-dm-sans)', 'sans-serif']
             }
         }
     },

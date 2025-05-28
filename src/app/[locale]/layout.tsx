@@ -5,6 +5,20 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import CookieConsent from '../components/CookieConsent';
 import '@/app/globals.css';
+import { DM_Sans } from 'next/font/google';
+import PageTransition from '../components/PageTransition';
+
+const dmSans = DM_Sans({
+    subsets: ['latin'],
+    weight: ['400', '500', '700'],
+    variable: '--font-dm-sans',
+    display: 'swap'
+});
+
+export const metadata = {
+    title: 'LuarKerja',
+    description: 'Website resmi LuarKerja'
+};
 
 export default async function LocaleLayout({
     children,
@@ -29,11 +43,13 @@ export default async function LocaleLayout({
     }
 
     return (
-        <html lang={locale}>
+        <html lang={locale} className={dmSans.className}>
             <body>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Navbar />
+                    <PageTransition>
                     {children}
+                    </PageTransition>
                     <CookieConsent />
                     <Footer />
                 </NextIntlClientProvider>

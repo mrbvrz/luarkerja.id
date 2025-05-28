@@ -92,32 +92,31 @@ export default function Footer() {
                         </button>
 
                         <AnimatePresence>
-                            {open && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: -5, scale: 0.95 }}
-                                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                                    exit={{ opacity: 0, y: -5, scale: 0.95 }}
-                                    transition={{ duration: 0.2 }}
-                                    className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-md shadow-lg z-50 overflow-hidden"
-                                >
-                                    {locales.map(locale => (
-                                        <button
-                                            key={locale.code}
-                                            onClick={() =>
-                                                handleChangeLocale(locale.code as 'en' | 'id')
-                                            }
-                                            className={`block w-full px-4 py-2 text-sm text-left transition ${
-                                                selected === locale.code
-                                                    ? 'bg-blue-500 text-white font-semibold'
-                                                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-                                            }`}
-                                        >
-                                            {locale.label}
-                                        </button>
-                                    ))}
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+  {open && (
+    <motion.div
+      initial={{ opacity: 0, y: 5, scale: 0.95 }}      // dari bawah ke atas
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: 5, scale: 0.95 }}
+      transition={{ duration: 0.2 }}
+      className="absolute right-0 bottom-full mb-2 w-40 bg-white dark:bg-gray-800 rounded-md shadow-lg z-50 overflow-hidden"
+    >
+      {locales.map(locale => (
+        <button
+          key={locale.code}
+          onClick={() => handleChangeLocale(locale.code as 'en' | 'id')}
+          className={`block w-full px-4 py-2 text-sm text-left transition ${
+            selected === locale.code
+              ? 'bg-blue-500 text-white font-semibold'
+              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+          }`}
+        >
+          {locale.label}
+        </button>
+      ))}
+    </motion.div>
+  )}
+</AnimatePresence>
+
                     </div>
                 </div>
             </div>
