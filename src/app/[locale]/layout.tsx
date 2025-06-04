@@ -8,7 +8,6 @@ import SubFooter from '../components/SubFooter';
 import '@/app/globals.css';
 import { DM_Sans } from 'next/font/google';
 import PageTransition from '../components/PageTransition';
-import { GlobalLoadingProvider } from '../hooks/useGlobalLoading';
 
 const figtree = DM_Sans({
     subsets: ['latin'],
