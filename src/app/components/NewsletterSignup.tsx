@@ -50,7 +50,7 @@ export default function NewsletterSignup() {
             setEmail('');
             setError('');
             setSubmitted(false);
-        } catch (err) {
+        } catch (error) {
             setError(t('serverError'));
             setSubmitted(false);
         }
