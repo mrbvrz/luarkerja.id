@@ -95,5 +95,48 @@
         "invalidEmail": "Email tidak valid.",
         "emptyEmail": "Email tidak boleh kosong.",
         "serverError": "Terjadi kesalahan saat mengirim data."
+    },
+    "WhyChooseUs": {
+        "title": "Kenapa Memilih LuarKerja?",
+        "description": "Kami dipercaya karena kualitas dan keandalan kami.",
+        "team": {
+            "title": "Tim Berpengalaman",
+            "description": "Kami memiliki tim profesional dengan keahlian tinggi."
+        },
+        "security": {
+            "title": "Keamanan Terjamin",
+            "description": "Data dan proyek Anda aman bersama kami."
+        },
+        "fast": {
+            "title": "Cepat dan Efisien",
+            "description": "Kami menyelesaikan proyek tepat waktu dengan hasil terbaik."
+        },
+        "reliable": {
+            "title": "Terpercaya",
+            "description": "Didukung oleh klien-klien besar dan kepuasan pelanggan."
+        }
+    },
+    "CallToAction": {
+        "heading": "Diskusikan Project IT Anda Dengan Kami",
+        "description": "Siap untuk meningkatkan teknologi bisnis Anda? Hubungi kami untuk konsultasi yang disesuaikan dan mulai perjalanan Anda menuju inovasi IT.",
+        "button": "Book Konsultasi Gratis"
+    },
+    "ContactPage": {
+        "heading": "Ada Pertanyaan?",
+        "subheading": "Dapatkan konsultasi gratis dan penawaran terbaik dari tim kami."
+    },
+    "ContactForm": {
+        "name": "Nama Lengkap",
+        "company": "Nama Perusahaan",
+        "phone": "No Telp/WhatsApp",
+        "email": "Email Anda",
+        "position": "Posisi Anda",
+        "need": "Kebutuhan",
+        "message": "Pertanyaan / Pesan",
+        "placeholder": "Jelaskan kebutuhan Anda...",
+        "submit": "Kirim",
+        "required": "Wajib diisi",
+        "invalid": "Email tidak valid",
+        "select": "Pilih salah satu"
     }
 }

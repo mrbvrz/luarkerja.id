@@ -68,11 +68,11 @@ export default function Navbar() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -100, opacity: 0 }}
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/70 dark:bg-gray-900/70 shadow-md"
+                    className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-luarkerja-50/70 dark:bg-gray-900/70 shadow-md"
                 >
-                    <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-                        <div className="text-xl font-bold text-gray-900 dark:text-white">
-                            LuarKerja
+                    <div className="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
+                        <div className="text-2xl font-bold text-luarkerja-700 dark:text-white">
+                            LuarKerja.id
                         </div>
                         <ul className="flex space-x-6 text-gray-700 dark:text-gray-300">
                             {currentNavItems.map(({ label, href }) => {
@@ -84,8 +84,8 @@ export default function Navbar() {
                                             locale={locale}
                                             className={`transition px-2 py-1 rounded-md ${
                                                 active
-                                                    ? 'text-blue-600 dark:text-blue-400 font-semibold'
-                                                    : 'hover:text-blue-500'
+                                                    ? 'text-luarkerja-700 dark:text-blue-400 font-semibold'
+                                                    : 'hover:text-luarkerja-600'
                                             }`}
                                         >
                                             {label}

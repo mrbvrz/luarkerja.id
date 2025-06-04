@@ -44,7 +44,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="max-w-5xl mx-auto px-4 py-10"
+            className="max-w-6xl mx-auto px-4 py-10"
         >
             <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Hubungi Kami</h1>
 

@@ -95,5 +95,48 @@
         "invalidEmail": "Invalid email address.",
         "emptyEmail": "Email cannot be empty.",
         "serverError": "An error occurred while submitting data."
+    },
+    "WhyChooseUs": {
+        "title": "Why Choose LuarKerja?",
+        "description": "We are trusted for our quality and reliability.",
+        "team": {
+            "title": "Experienced Team",
+            "description": "Our professional team is highly skilled and dedicated."
+        },
+        "security": {
+            "title": "Guaranteed Security",
+            "description": "Your data and projects are safe with us."
+        },
+        "fast": {
+            "title": "Fast & Efficient",
+            "description": "We deliver projects on time with top quality."
+        },
+        "reliable": {
+            "title": "Reliable",
+            "description": "Trusted by major clients and proven customer satisfaction."
+        }
+    },
+    "CallToAction": {
+        "heading": "Discuss Your IT Project With Us",
+        "description": "Ready to elevate your business technology? Contact us for a tailored consultation and start your journey toward IT innovation.",
+        "button": "Book a Free Consultation Call"
+    },
+    "ContactPage": {
+        "heading": "Have Any Questions?",
+        "subheading": "Get a free consultation and best offer from our team."
+    },
+    "ContactForm": {
+        "name": "Full Name",
+        "company": "Company Name",
+        "phone": "Phone/WhatsApp",
+        "email": "Email",
+        "position": "Your Position",
+        "need": "Requirement",
+        "message": "Question / Message",
+        "placeholder": "Describe your needs...",
+        "submit": "Submit",
+        "required": "This field is required",
+        "invalid": "Invalid email address",
+        "select": "Select one"
     }
 }

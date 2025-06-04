@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function SubFooter() {
     return (
         <div className="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-10">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
                 {/* Logo dan Deskripsi */}
                 <div>
                     <Link href="/" className="inline-block mb-4">
@@ -27,7 +27,7 @@ export default function SubFooter() {
                 {/* Navigasi Link */}
                 <div>
                     <h4 className="text-md font-semibold mb-3">Navigasi</h4>
-                    <ul className="space-y-2 text-sm">
+                    <ul className="space-y-2">
                         <li>
                             <Link href="/" className="hover:underline">
                                 Beranda
@@ -54,15 +54,15 @@ export default function SubFooter() {
                 {/* Kontak & Sosial */}
                 <div>
                     <h4 className="text-md font-semibold mb-3">Hubungi Kami</h4>
-                    <ul className="text-sm space-y-1">
+                    <ul className="space-y-1">
                         <li>
                             Email:{' '}
                             <a href="mailto:halo@luarkerja.com" className="hover:underline">
-                                halo@luarkerja.com
+                                admin@luarkerja.id
                             </a>
                         </li>
-                        <li>Telepon: +62 812-3456-7890</li>
-                        <li>Alamat: Jakarta, Indonesia</li>
+                        <li>Telepon: +62 822-8806-3636</li>
+                        <li>Alamat: Jl. Pemda Gg. Murai Pangkalan Kerinci</li>
                     </ul>
 
                     <div className="flex gap-3 mt-4">

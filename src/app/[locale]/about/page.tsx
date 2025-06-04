@@ -27,7 +27,7 @@ export default function AboutPage() {
     const t = useTranslations('About');
 
     return (
-        <main className="max-w-5xl mx-auto px-4 py-10">
+        <main className="max-w-6xl mx-auto px-4 py-10">
             <section className="mb-12">
                 <h1 className="text-3xl font-bold mb-4">{t('title')}</h1>
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">{t('intro1')}</p>

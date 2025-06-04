@@ -31,6 +31,19 @@ body {
     animation-fill-mode: backwards;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
 @keyframes animate-fade {
     0% {
         opacity: 0;

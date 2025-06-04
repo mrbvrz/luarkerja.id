@@ -40,7 +40,7 @@ export default function ClientCarousel() {
 
     return (
         <section className="py-10 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 overflow-hidden">
+            <div className="max-w-6xl mx-auto px-4 overflow-hidden">
                 <h2 className="text-xl font-semibold text-center mb-6 text-gray-700 dark:text-gray-200">
                     Dipercaya oleh perusahaan besar
                 </h2>

@@ -15,7 +15,19 @@ const config: Config = {
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
             },
             colors: {
-                'cookie-bg': '#fefefe'
+                luarkerja: {
+                    50: '#FFFDFA',
+                    100: '#FFFAF5',
+                    200: '#FFF3E5',
+                    300: '#FFEEDB',
+                    400: '#FFE6CC',
+                    500: '#FFE0BF',
+                    600: '#FFB566',
+                    700: '#FF8B0F',
+                    800: '#B35C00',
+                    900: '#5C2F00',
+                    950: '#2E1800'
+                }
             },
             fontFamily: {
                 sans: ['var(--font-dm-sans)', 'sans-serif']

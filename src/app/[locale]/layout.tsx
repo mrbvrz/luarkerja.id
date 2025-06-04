@@ -4,12 +4,13 @@ import { routing } from '@/i18n/routing';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import CookieConsent from '../components/CookieConsent';
-import '@/app/globals.css';
-import { Figtree } from 'next/font/google';
-import PageTransition from '../components/PageTransition';
 import SubFooter from '../components/SubFooter';
+import '@/app/globals.css';
+import { DM_Sans } from 'next/font/google';
+import PageTransition from '../components/PageTransition';
+import { GlobalLoadingProvider } from '../hooks/useGlobalLoading';
 
-const dmSans = Figtree({
+const figtree = DM_Sans({
     subsets: ['latin'],
     weight: ['400', '500', '700'],
     variable: '--font-dm-sans',
@@ -34,24 +35,25 @@ export default async function LocaleLayout({
         notFound();
     }
 
-    // ✅ Load messages dari file JSON sesuai locale
     let messages;
     try {
         messages = (await import(`../../../messages/${locale}.json`)).default;
     } catch (error) {
-        console.error('Failed to load messages:', error);
+        console.error('Gagal load messages:', error);
         notFound();
     }
 
     return (
-        <html lang={locale} className={dmSans.className}>
+        <html lang={locale} className={figtree.className}>
             <body>
                 <NextIntlClientProvider locale={locale} messages={messages}>
+                    {/* <GlobalLoadingProvider> */}
                     <Navbar />
                     <PageTransition>{children}</PageTransition>
                     <CookieConsent />
                     <SubFooter />
                     <Footer />
+                    {/* </GlobalLoadingProvider> */}
                 </NextIntlClientProvider>
             </body>
         </html>
