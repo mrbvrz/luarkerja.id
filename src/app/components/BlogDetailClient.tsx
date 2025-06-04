@@ -4,7 +4,6 @@ import useSWR from 'swr';
 import MarkdownRenderer from '@/app/components/MarkdownRenderer';
 import { motion } from 'framer-motion';
 import ShareButtons from '@/app/components/ShareButtons';
-import CallToAction from './CallToAction';
 import BlogTableOfContents from '@/app/components/BlogTableOfContents';
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
