@@ -48,7 +48,7 @@ export default function BlogClientRenderer({
             <p className="text-sm text-gray-500 mb-6">
                 {new Date(blog.created_at).toLocaleDateString(locale)}
             </p>
-            <MarkdownRenderer markdown={blog.content} />
+            <MarkdownRenderer markdown={t('content')} />
         </article>
     );
 }

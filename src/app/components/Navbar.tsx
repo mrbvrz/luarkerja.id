@@ -84,7 +84,7 @@ export default function Navbar() {
                                             locale={locale}
                                             className={`transition px-2 py-1 rounded-md ${
                                                 active
-                                                    ? 'text-blue-600 dark:text-blue-400 font-semibold underline underline-offset-4'
+                                                    ? 'text-blue-600 dark:text-blue-400 font-semibold'
                                                     : 'hover:text-blue-500'
                                             }`}
                                         >

@@ -5,10 +5,11 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import CookieConsent from '../components/CookieConsent';
 import '@/app/globals.css';
-import { DM_Sans } from 'next/font/google';
+import { Figtree } from 'next/font/google';
 import PageTransition from '../components/PageTransition';
+import SubFooter from '../components/SubFooter';
 
-const dmSans = DM_Sans({
+const dmSans = Figtree({
     subsets: ['latin'],
     weight: ['400', '500', '700'],
     variable: '--font-dm-sans',
@@ -49,6 +50,7 @@ export default async function LocaleLayout({
                     <Navbar />
                     <PageTransition>{children}</PageTransition>
                     <CookieConsent />
+                    <SubFooter />
                     <Footer />
                 </NextIntlClientProvider>
             </body>

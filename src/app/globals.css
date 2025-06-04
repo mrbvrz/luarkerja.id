@@ -16,6 +16,14 @@ body {
     @apply font-sans;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
 .animate {
     animation-duration: 0.5s;
     animation-name: animate-fade;

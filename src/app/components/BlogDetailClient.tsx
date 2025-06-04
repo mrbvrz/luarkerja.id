@@ -1,22 +1,18 @@
 'use client';
 
 import useSWR from 'swr';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import MarkdownRenderer from '@/app/components/MarkdownRenderer';
 import { motion } from 'framer-motion';
+import ShareButtons from '@/app/components/ShareButtons';
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
-export default function BlogDetailClient({ slug }: { slug: string }) {
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
-    const locale = searchParams?.get('locale') || 'id';
-
+export default function BlogDetailClient({ slug, locale }: { slug: string; locale: string }) {
     const {
         data: blog,
         error,
         isLoading
-    } = useSWR(`/api/blogs/${slug}?locale=${locale}`, fetcher, {
+    } = useSWR(slug ? `/api/blogs/${slug}?locale=${locale}` : null, fetcher, {
         revalidateOnFocus: false,
         revalidateOnReconnect: false
     });
@@ -25,9 +21,9 @@ export default function BlogDetailClient({ slug }: { slug: string }) {
     if (isLoading)
         return (
             <div className="max-w-3xl mx-auto px-4 py-10 animate-pulse space-y-4">
-                <div className="h-8 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
-                <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded w-1/2"></div>
-                <div className="h-60 bg-gray-300 dark:bg-gray-700 rounded"></div>
+                <div className="h-8 bg-gray-300 rounded w-3/4"></div>
+                <div className="h-6 bg-gray-300 rounded w-1/2"></div>
+                <div className="h-60 bg-gray-300 rounded"></div>
             </div>
         );
 
@@ -42,8 +38,8 @@ export default function BlogDetailClient({ slug }: { slug: string }) {
             <p className="text-sm text-gray-500 mb-6">
                 {new Date(blog.created_at).toLocaleDateString(locale)}
             </p>
-
             <MarkdownRenderer markdown={blog.content} />
+            <ShareButtons />
         </motion.article>
     );
 }

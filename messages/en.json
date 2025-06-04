@@ -67,5 +67,33 @@
         "mobileDesc": "Creating high-quality Android & iOS apps.",
         "webTitle": "Information Systems",
         "webDesc": "Digital solutions for automation and efficiency."
+    },
+    "statsSection": {
+        "title": "Our Statistics",
+        "items": [
+            {
+                "value": 120,
+                "label": "Projects Completed"
+            },
+            {
+                "value": 85,
+                "label": "Happy Clients"
+            },
+            {
+                "value": 10,
+                "label": "Years of Experience"
+            }
+        ]
+    },
+    "Newsletter": {
+        "title": "Subscribe to Newsletter",
+        "description": "Enter your email to receive updates.",
+        "placeholder": "Your email",
+        "subscribe": "Subscribe",
+        "submitted": "Submitting...",
+        "alreadySubscribed": "Email is already subscribed.",
+        "invalidEmail": "Invalid email address.",
+        "emptyEmail": "Email cannot be empty.",
+        "serverError": "An error occurred while submitting data."
     }
 }

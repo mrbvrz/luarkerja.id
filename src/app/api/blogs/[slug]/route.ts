@@ -4,13 +4,14 @@ import { cookies } from 'next/headers';
 
 export async function GET(req: NextRequest, { params }: { params: { slug: string } }) {
     const supabase = createServerComponentClient({ cookies });
+
     const slug = params.slug;
     const url = new URL(req.url);
     const locale = url.searchParams.get('locale') || 'id';
 
     const { data: blog, error } = await supabase
         .from('blogs')
-        .select('title, content, description, created_at')
+        .select('title, content, description, created_at, lang')
         .eq('slug', slug)
         .eq('lang', locale)
         .eq('status', 'published')

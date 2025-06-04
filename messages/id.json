@@ -67,5 +67,33 @@
         "mobileDesc": "Membuat aplikasi Android dan iOS berkualitas tinggi.",
         "webTitle": "Sistem Informasi",
         "webDesc": "Solusi digital untuk otomasi dan efisiensi kerja."
+    },
+    "statsSection": {
+        "title": "Statistik Kami",
+        "items": [
+            {
+                "value": 120,
+                "label": "Proyek Selesai"
+            },
+            {
+                "value": 85,
+                "label": "Klien Puas"
+            },
+            {
+                "value": 10,
+                "label": "Tahun Pengalaman"
+            }
+        ]
+    },
+    "Newsletter": {
+        "title": "Berlangganan Newsletter",
+        "description": "Masukkan email Anda untuk mendapatkan update terbaru.",
+        "placeholder": "Email Anda",
+        "subscribe": "Berlangganan",
+        "submitted": "Mengirim...",
+        "alreadySubscribed": "Email sudah terdaftar.",
+        "invalidEmail": "Email tidak valid.",
+        "emptyEmail": "Email tidak boleh kosong.",
+        "serverError": "Terjadi kesalahan saat mengirim data."
     }
 }

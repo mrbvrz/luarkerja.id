@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import StatsSection from '@/app/components/StatsSection';
 
 const teamMembers = [
     {
@@ -32,7 +33,7 @@ export default function AboutPage() {
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">{t('intro1')}</p>
                 <p className="text-lg text-gray-700 dark:text-gray-300">{t('intro2')}</p>
             </section>
-
+            <StatsSection />
             <section>
                 <h2 className="text-2xl font-bold mb-6">{t('teamTitle')}</h2>
                 <div className="grid gap-6 md:grid-cols-3">
