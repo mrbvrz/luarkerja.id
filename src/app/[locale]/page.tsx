@@ -5,12 +5,29 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import CallToAction from '../components/CallToAction';
 import ContactForm from '../components/ContactForm';
 import { useTranslations } from 'next-intl';
+import Blur from '../components/Blur';
+import TestimonialsSlider from '../components/TestimonialSlider';
+import NewsletterSection from '../components/NewsletterSection';
+import CustomerInsightSection from '../components/CustomerInsightSection';
+import ToolingSection from '../components/ToolingSection';
+import BlurParallaxSection from '../components/BlurParallaxSection';
+import AnimatedWords from '../components/AnimatedWords';
+import BlurHero from '../components/BlurHero';
 
 export default function HomePage() {
     const t = useTranslations('ContactPage');
     return (
         <div>
+            <BlurHero />
+        <BlurParallaxSection />
+            <Blur />
             <Hero />
+            <TestimonialsSlider />
+            <NewsletterSection />
+            <CustomerInsightSection />
+            <AnimatedWords />
+
+            <ToolingSection />
             <ProjectCarousel />
             <ClientCarousel />
             <div

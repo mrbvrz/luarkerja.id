@@ -10,23 +10,38 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            animation: {
+        gradientMove: 'gradientMove 20s ease-in-out infinite',
+      },
+            keyframes: {
+                gradientMove: {
+                    '0%, 100%': {
+                        transform: 'translate(0%, 0%) scale(1)',
+                        backgroundPosition: '0% 50%'
+                    },
+                    '50%': {
+                        transform: 'translate(-10%, -10%) scale(1.1)',
+                        backgroundPosition: '100% 50%'
+                    }
+                }
+            },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
             },
             colors: {
                 luarkerja: {
-                    50: '#FFFDFA',
-                    100: '#FFFAF5',
-                    200: '#FFF3E5',
-                    300: '#FFEEDB',
-                    400: '#FFE6CC',
-                    500: '#FFE0BF',
-                    600: '#FFB566',
-                    700: '#FF8B0F',
-                    800: '#B35C00',
-                    900: '#5C2F00',
-                    950: '#2E1800'
+                    50: '#fff7ed',
+                    100: '#ffedd5',
+                    200: '#fed7aa',
+                    300: '#fdba74',
+                    400: '#fb923c',
+                    500: '#f97316',
+                    600: '#ea580c',
+                    700: '#c2410c',
+                    800: '#9a3412',
+                    900: '#7c2d12',
+                    950: '#431407'
                 }
             },
             fontFamily: {

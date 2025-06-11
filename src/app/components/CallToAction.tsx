@@ -10,7 +10,7 @@ export default function CallToAction() {
     return (
         <section className="py-12 bg-luarkerja-50 dark:bg-gray-900">
             <div className="max-w-6xl mx-auto">
-                <div className="bg-luarkerja-600 rounded-3xl overflow-hidden shadow-xl p-6 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="bg-luarkerja-500 rounded-3xl overflow-hidden shadow-xl p-6 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
                     <motion.div
                         className="flex-1"
                         initial={{ opacity: 0, x: -50 }}

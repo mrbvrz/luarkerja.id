@@ -44,7 +44,7 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale} className={figtree.className}>
-            <body>
+            <body className="pt-[64px]">
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     {/* <GlobalLoadingProvider> */}
                     <Navbar />

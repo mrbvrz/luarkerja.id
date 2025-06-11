@@ -6,97 +6,120 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const navItems = {
-    en: [
-        { label: 'Home', href: '/' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'About', href: '/about' },
-        { label: 'Services', href: '/services' },
-        { label: 'Contact', href: '/contact' }
-    ],
-    id: [
-        { label: 'Beranda', href: '/' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Tentang', href: '/about' },
-        { label: 'Layanan', href: '/services' },
-        { label: 'Kontak', href: '/contact' }
-    ]
+  en: [
+    { label: 'Home', href: '/' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Contact', href: '/contact' }
+  ],
+  id: [
+    { label: 'Beranda', href: '/' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Tentang', href: '/about' },
+    { label: 'Layanan', href: '/services' },
+    { label: 'Kontak', href: '/contact' }
+  ]
 };
 
 export default function Navbar() {
-    const [show, setShow] = useState(true);
-    const lastScrollY = useRef(0);
-    const pathname = usePathname();
+  const [show, setShow] = useState(true);
+  const [isTop, setIsTop] = useState(true);
+  const pathname = usePathname();
 
-    const locale = pathname.startsWith('/en') ? 'en' : 'id';
-    const currentNavItems = navItems[locale as 'en' | 'id'];
+  const lastScrollY = useRef(0);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+  const isScrollingUp = useRef(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentY = window.scrollY;
-            if (currentY < 0) return;
+  const locale = pathname.startsWith('/en') ? 'en' : 'id';
+  const currentNavItems = navItems[locale as 'en' | 'id'];
 
-            if (currentY > lastScrollY.current && currentY > 100) {
-                setShow(false);
-            } else {
-                setShow(true);
-            }
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsTop(scrollY <= 10);
 
-            lastScrollY.current = currentY;
-        };
+      const scrollingUp = scrollY < lastScrollY.current;
+      const scrollingDown = scrollY > lastScrollY.current;
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+      if (scrollingDown && scrollY > 100) {
+        isScrollingUp.current = false;
+        if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+        setShow(false);
+      }
 
-    const isActive = (href: string) => {
-        const full = `/${locale}${href === '/' ? '' : href}`;
-
-        // Khusus untuk root '/'
-        if (href === '/') {
-            return pathname === `/${locale}`;
+      if (scrollingUp) {
+        if (!isScrollingUp.current) {
+          isScrollingUp.current = true;
+          if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+          scrollTimeout.current = setTimeout(() => {
+            if (isScrollingUp.current) setShow(true);
+          }, 100);
         }
+      }
 
-        // Untuk path lain, aktif jika sama atau berada dalam path detail
-        return pathname === full || pathname.startsWith(`${full}/`);
+      lastScrollY.current = scrollY;
     };
 
-    return (
-        <AnimatePresence>
-            {show && (
-                <motion.nav
-                    initial={{ y: -100, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -100, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-luarkerja-50/70 dark:bg-gray-900/70 shadow-md"
-                >
-                    <div className="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
-                        <div className="text-2xl font-bold text-luarkerja-700 dark:text-white">
-                            LuarKerja.id
-                        </div>
-                        <ul className="flex space-x-6 text-gray-700 dark:text-gray-300">
-                            {currentNavItems.map(({ label, href }) => {
-                                const active = isActive(href);
-                                return (
-                                    <li key={href}>
-                                        <Link
-                                            href={`/${locale}${href === '/' ? '' : href}`}
-                                            locale={locale}
-                                            className={`transition px-2 py-1 rounded-md ${
-                                                active
-                                                    ? 'text-luarkerja-700 dark:text-blue-400 font-semibold'
-                                                    : 'hover:text-luarkerja-600'
-                                            }`}
-                                        >
-                                            {label}
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                </motion.nav>
-            )}
-        </AnimatePresence>
-    );
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    };
+  }, []);
+
+  const isActive = (href: string) => {
+    const full = `/${locale}${href === '/' ? '' : href}`;
+    return href === '/' ? pathname === `/${locale}` : pathname.startsWith(full);
+  };
+
+  return (
+    <AnimatePresence mode="wait">
+      {show && (
+        <motion.nav
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.35, ease: 'easeInOut' }}
+          className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${
+            isTop
+              ? 'bg-transparent shadow-none'
+              : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md'
+          }`}
+          style={{
+            willChange: 'opacity, transform',
+            transform: 'translate3d(0,0,0)',
+            pointerEvents: show ? 'auto' : 'none',
+          }}
+        >
+          <div
+            className={`max-w-6xl mx-auto px-4 ${
+              isTop ? 'py-4' : 'py-2'
+            } flex items-center justify-between transition-all duration-300 ease-in-out`}
+          >
+            <div className="text-2xl font-bold text-luarkerja-700 dark:text-white">
+              LuarKerja.id
+            </div>
+            <ul className="flex space-x-6 text-gray-700 dark:text-gray-300">
+              {currentNavItems.map(({ label, href }) => (
+                <li key={href}>
+                  <Link
+                    href={`/${locale}${href === '/' ? '' : href}`}
+                    locale={locale}
+                    className={`px-2 py-1 rounded-md transition-colors duration-200 ${
+                      isActive(href)
+                        ? 'text-luarkerja-700 dark:text-blue-400 font-semibold'
+                        : 'hover:text-luarkerja-600 dark:hover:text-white'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.nav>
+      )}
+    </AnimatePresence>
+  );
 }
